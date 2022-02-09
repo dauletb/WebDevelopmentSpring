@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+             *{
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background-color: #F0f2f5;
+                position: relative;
+
+            }
+            .head{
+                position: absolute;
+                left: 50px;
+                top: 100px;
+            }
+            .main2{
+                width: 100%;
+                height: 100px;
+                border-radius: 6px;
+                display: flex;
+                grid-template-columns: repeat(5,1px);
+                padding: 30px;
+                border: no;
+                background-color: green;
+
+            }
+            a{
+                outline: none;
+                color: #F0f2f5;
+            }
+            .dis{
+                padding: 30px;
+                padding-top: 0px;
+                cursor: grab;
+            }
+            .log{
+                position: absolute;
+                top:0px;
+                left: 900px;
+                background-color: #FFFFFF;
+                height: 250px;
+                width: 350px;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                border-radius: 6px;
+
+            }
+            .log>input[type=text],.log>input[type=password]{
+                height: 18%;
+                width: 95%;
+                margin: 8px 0;
+                border: 1px solid blue;
+                border-radius: 6px;
+                padding: 10px;
+                font-size: 15px;
+
+            }
+            .log>input[type=text]:focus,.log>input[type=password]:focus{
+                outline: none;
+                border: 1px solid blue;
+                box-shadow: 0 0 5px #719ECE;
+            }
+            
+            .log>input[type=button]{
+                background-color: #1877f2;
+                font-size: 20px;
+                width: 95%;
+                font-weight: bold;
+                color: #F0f2f5;
+                border-radius: 6px;
+                height: 15%;
+                border: none;
+            }
+            .log>a{
+                margin: 10px 0;
+                text-decoration: none;
+                font-size: 10px;
+                color: #1877f2;
+            }
+            #button2{
+                width: 50%;
+                border-radius: 6px;
+                border: none;
+                background-color: #36A420;
+                margin-top: 10%;
+                font-weight: bold;
+                font-size: 10px;
+            }
+            .me{
+                position: relative;
+            }
+            .me2{
+                position: absolute;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: #F0f2f5;
+                left: 350px;
+                top: 50px;
+            }
+            .study:hover{
+                box-shadow: #719ECE;
+                opacity: 70%;
+            }
+        
+
+        </style>
+
+    </head>
+    <body>
+        <div class="main">
+            <img src="surf2.jpg">
+            <div class="head">
+                <h1>
+                    Hello! Welcome to my website!
+                </h1>
+            </div>
+            <div class="log">
+                <input type="text" placeholder="Email or Phone number">
+                <input type="password" placeholder="Enter password">
+                <input type="button" value="Log In" class="button1">
+                <a href="none">Forgot password?</a>
+                <hr style="width: 95%;">
+                <input type="button" value="Create New Account" id="button2">
+            </div>
+        </div>
+        <div class="me">
+            <img src="study.jpg" class="study">
+            <div class="me2"><h1>This website is about my university life at kbtu!</h1><br>
+                <p>Here you will learn more about that process.<br>
+                On the box below you can see my current disciplines</p>
+            </div>
+        </div>
+            <div class="main2">
+                <h2>Disciplines</h2>
+                <div class="dis"> <a href="">Object oriented programming</a></div>
+                <div class="dis"> <a href="">Advanced statistics</a></div>
+                <div class="dis"> <a href="web.html">Web development</a></div>
+                <div class="dis"> <a href="">Electronic and digital design</a></div>
+            </div>
+        </div>
+    
+    </body>
+
+</html>
