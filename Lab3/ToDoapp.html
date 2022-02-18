@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/22a021c7a8.js" crossorigin="anonymous"></script>
+        <style>
+            *{
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background-color: #F0f2f5;
+                position: relative;
+            }
+            .List{
+                position: relative;
+                width: 50%;
+                left: 30%;
+            }
+            .ToDo{
+            }
+            .Log{
+                align-items: baseline;
+            }
+            #f1{
+                display: flex;
+                padding: 20px;
+                border-bottom:black solid;
+            }
+          
+            .im{
+                position: relative;
+                align-items: center;
+                width: 15%;
+            }
+            .fa-solid fa-trash{
+                position: absolute;
+                left: 50% ;
+            }
+            .Labels{
+                margin-top: 20px;
+                border: black solid;
+                border-bottom: none;
+                border-radius: 6px;
+
+            }
+            .inp{
+                padding-left: 10%;
+            }
+            .inp>input[type=text]{
+                width: 50%;
+                padding-left: 10px;
+            }
+            .inp>input[type=button]{
+                width: 10%;
+                background-color:rgba(76, 0, 255, 0.212) ;
+                border-radius: 6px;
+            }
+            .h1{
+                font-size: 25px;
+                padding-bottom: 20px;
+            }
+            .head{
+                position: relative;
+                background-color: black;
+                color: #F0f2f5;
+                height: 50px;
+            }
+            .ToDo{
+                padding: 10px;
+                padding-left: 40px;
+            }
+            .List{
+                padding-top: 30px;
+            }
+            .ch{
+                background-color: blue;
+            }
+            .ino{
+                width: 80%;
+            }
+            input[type="checkbox"]:checked+span{
+                text-decoration: line-through;
+                color:red;
+            }
+            .Labels button{
+                border: none;
+            }
+            .Labels button:hover{
+                cursor: pointer;
+                opacity: 60%;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="head">
+            <div class="ToDo">ToDo List</div>
+        </div>
+        <div class="List">
+            <div class="h1">ToDoList</div>
+            <div class="Log">
+                <div class="inp">
+                <input type="text" placeholder="New Task" class="acc">
+                <input type="button" value="Add" onClick="AddF()">
+                </div>
+            </div>
+            <div class="Labels">
+                <div id="f1" class="l1">
+                    <div class="ino">
+                        <input type="checkbox">
+                        <span>First item</span>
+                    </div>
+
+                    <div class="im">
+                        <button class="l1" onclick="delF('l1')"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    </div>
+                    <div id="f1" class="l2">
+                        <div class="ino">
+                            <input type="checkbox">
+                            <span>Second item</span>
+                        </div>
+    
+                        <div class="im">
+                            <button class="l2" onClick="delF('l2')"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                        </div>
+                        <div id="f1" class="l3">
+                            <div class="ino">
+                                <input type="checkbox"><span>Third item</span>
+                            </div>
+        
+                            <div class="im">
+                                <button class="l3" onClick="delF('l3')"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                            </div>
+
+                </div>
+               
+    
+
+            </div>
+
+
+        </div>
+        <script>
+            function AddF(){
+            let p=document.getElementsByClassName("acc")[0].value;
+            var divm=document.createElement("div");
+            divm.setAttribute("id","f1");
+            divm.setAttribute("class",p);
+            var div=document.createElement("div");
+            div.setAttribute("class","ino");
+            var divc=document.createElement("div");
+            divc.setAttribute("class","im");
+            var ic=document.createElement("i");
+            ic.setAttribute("class","fa-solid fa-trash");
+            var bt=document.createElement("button");
+            bt.setAttribute("class",p);
+            bt.setAttribute("onClick","delF('"+p+"')");
+            bt.appendChild(ic);
+            divc.appendChild(bt);
+            var inp=document.createElement("INPUT");
+            inp.setAttribute("type","checkbox");
+            var sp=document.createElement("span");
+            var text=document.createTextNode(document.getElementsByClassName("acc")[0].value);
+            sp.appendChild(text);
+            div.appendChild(inp);
+            div.appendChild(sp);
+            divm.appendChild(div);
+            divm.appendChild(divc);
+            const ex=document.getElementsByClassName("Labels")[0];
+            ex.appendChild(divm); 
+            }
+            function delF(a){
+                document.getElementsByClassName(a)[0].remove();
+            }
+
+
+        </script>
+    </body>
+</html>
