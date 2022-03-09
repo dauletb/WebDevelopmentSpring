@@ -1,0 +1,35 @@
+<div *ngFor="let pr of arr " >
+<div *ngIf="products[pr].exists" id="product" class={{products[pr].name}}>
+    <h3 id="pr">
+      {{products[pr].name}}
+    </h3> 
+    <div class="imageH">
+    <div class="image" *ngFor="let i of products[pr].image">
+      <img src="assets/{{i}}" alt="">
+    </div>
+  </div>
+    <p id="pr">
+      {{products[pr].description}}
+    </p>
+    <div class="button" id="pr"><button><a class="a" href="">Buy it here</a></button></div>
+    or
+   <a id="pr" href="">on Amazon</a>
+   <div class="rating">
+     Rating:
+     <div *ngFor="let r of products[pr].rat"><fa-icon [icon]="r"></fa-icon></div>
+   </div>
+   <div class="liking">
+     <fa-icon [icon]="heart"></fa-icon>
+     {{products[pr].likes}}
+     <button class="likes" (click)="products[pr].likes=products[pr].likes+1">Like</button>
+   </div>
+   <share-buttons [theme]="'material-dark'"
+[include]="['facebook','vk','telegram','copy']"
+[show]="4"
+[autoSetMeta]="false"
+></share-buttons>
+<div>
+  <fa-icon [icon]="rem"></fa-icon><button (click)="products[pr].exists=!products[pr].exists" class="delete">(Remove this from your offers</button>
+</div>
+  </div>
+</div>
