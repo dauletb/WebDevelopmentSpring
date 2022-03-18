@@ -1,0 +1,24 @@
+<p>album-detail works!</p>
+<h1>Albums id is:{{det[id].id}}</h1>
+<h1>Albums title is:</h1>
+<div *ngIf="editModeToggle" class="editInput">
+    <div>
+      <input type="text" [(ngModel)]="det[id].title" style="color: black; font-family: 'Courier New', Courier, monospace; font-size: medium ;">
+    </div>
+  </div>
+  
+  
+  <div *ngIf="!editModeToggle">
+    <div>{{det[id].title}}</div>
+  </div>
+  
+    <div *ngIf="editModeToggle">
+      <button (click)="saveChanges(det[id])">Save</button>
+    </div>
+  
+  
+    <div *ngIf="!editModeToggle">
+      <button (click)="edit(det[id])">Edit</button>
+    </div>
+<a routerLink="/album/{{id}}/photos">Photos</a><br>
+<button (click)="Back()">Return Back</button>
