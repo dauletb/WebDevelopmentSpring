@@ -1,24 +1,25 @@
+"""geeks_site URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
 from django.contrib import admin
-from django.urls import path
-from . import views, viewsProj
-from rest_framework_jwt.views import obtain_jwt_token
+from django.urls import path,include
+from . import views
+
 
 urlpatterns = [
-    path('login/', obtain_jwt_token),
     path('admin/', admin.site.urls),
-    path('welcome/', views.say_welcome),
-    path('products/', views.products_list),
-    path('products/<int:pr_id>', views.product_detail),
-    path('category/', views.products_category),
-    path('category/<int:categ_id>', views.product_concrete_category),
-    path('companies/', views.CompanyAPIView.as_view()),
-    path('companies/<int:comp_id>', views.CompanyIDAPIView.as_view()),
-    path('companies/<int:com_id>/vacancies', views.VacsInCompsVIEW.as_view()),
-    path('vacancies/', views.VacanciesAPIView.as_view()),
-    path('vacancies/<int:vac_id>', views.VacanciesIDAPIView.as_view()),
-    path('vacancies/top_ten', views.vacs_topTen),
-    path('pizzas/', viewsProj.pizza),
-    path('desserts/', viewsProj.dessert),
-    path('sets/', viewsProj.SetsAPIView.as_view()),
-    path('dishes/',viewsProj.DishesAPIView.as_view())
+    path('play/', views.say_hello),
+    path('api/', include('api.urls'))
 ]
